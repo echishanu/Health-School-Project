@@ -1,0 +1,296 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+	{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+    
+<div class="jumbotron">
+    <p class="lead">
+   
+<h3>What are Coronaviruses?</h3>
+Coronaviruses are a large family of viruses that cause
+respiratory illness ranging from the common cold to
+more severe diseases such as Middle East respiratory
+syndrome (MERS) and severe acute respiratory
+syndrome (SARS). Coronaviruses are zoonotic, meaning
+they are transmitted between animals and people.
+
+<br> 
+<br>    
+<h4>What is COVID-19?</h4>
+SARS-CoV-2 is a new strain of coronavirus that has not been previously identified in humans. COVID-19 was identified as
+the cause of an outbreak of respiratory illness first detected in Wuhan, China.
+
+<br>    
+<br> 
+<h4>How it is spread?</h4>
+Human coronaviruses most commonly spread from an infected person to others through:
+  <ul>
+      <li>The air by coughing and sneezing.</li>
+      <li>Close personal contact, such as touching or shaking hands. </li>
+      <li>Touching an object or surface with the virus on it, then touching your mouth, nose, or eyes before washing your hands. </li>
+      <li>Keep your distance. Maintain at least 1 metre distance between yourself and anyone who is coughing or sneezing. </li>          
+  </ul>  
+
+<br>  
+<h4>What are the symptoms?</h4>
+Symptoms can include fever, cough and shortness of breath. Symptoms may appear in as few as two days or as long as 14
+days after exposure.
+
+<br> 
+<br>      
+<h4>What are the prevention measures?</h4>
+
+There is currently no vaccine to prevent COVID-19 disease. The best way to prevent infection is to avoid being exposed to this virus.
+There are certain steps you can take to reduce your exposure to SARS-CoV-2:
+<ul>
+  <li>Wash your hands often with soap and water for at least 20 seconds. If soap and water are not available, use an alcohol-based hand sanitiser. </li>
+  <li>Cover your mouth and nose with your flexed elbow or a tissue. Throw away the tissue in a bin immediately and wash hands. </li>
+  <li>Avoid touching your eyes, nose and mouth with unwashed hands. </li>
+  <li>Clean and disinfect objects and surfaces that are frequently touched. </li>
+  <li>Avoid close contact with anyone who has a fever and cough. </li>
+  <li>Seek medical care especially if you have flu-like symptoms and experiencing cough and difficulty breathing. </li>
+  <li>Avoid consumption of raw or undercooked animal products. </li>
+  <li>Avoid travel if you have a fever and cough. </li>
+</ul>
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      <p class="lead">
+      <button type="button" class="btn btn-lg" style="background-color:#D2960B;" data-toggle="modal" data-target=".bd-example-modal-lg">Get started</button>
+      </p>
+    
+
+</div>
+
+<br><br><br>
+<div class="container mt-5 mb-3" style="width:fit-content;">
+      <center>
+        <h1>Sign-In  As</h1>
+        </center>
+      
+      
+      <form>
+          <div class="container mt-5 mb-5">
+       <div class="row">
+          <div class="col">
+             <a href="{% url 'sign_in_admin' %}">
+      <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_doctor' %}">
+      <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_patient' %}">
+      <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+      </a>
+          </div>
+        </div>
+        </div>
+      </form>
+</div>
+
+
+    
+
+    {% endif %}
+
+<br><br>
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <div class="text-white">
+    <h1>Sign-In  As</h1>
+  </div>
+</center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <div class="text-white">
+    <h1 >Sign-Up  As</h1>
+  </div>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br><br><br><br>
+
+<center>
+  <div class="text-white">
+    <h2>Our Doctors</h2>
+  <div class="card bg-dark text-white">
+
+</center>
+<div class="row mt-5 mb-5">
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dr. Tim </h5>
+                <img  alt="admin" src="{% static 'homepage/c31.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Hse.No-83, Ward No-12, New Matopos, P.O-Box 36, Bulawayo.</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dr. Mark </h5>
+                <img  alt="admin" src="{% static 'homepage/c41.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Kwekwe, Palm Road, Mbizo-148031, Destro , #11 Deluxe Road.</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">DR. Ruth</h5>
+                <img  alt="admin" src="{% static 'homepage/s72.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Harare, 1, CBD, Blufhill, #10 Kenmark Crescent.</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<br><br><br><br>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  </div>
+
+  
+ 
+
+
+
+
+
+</div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}
